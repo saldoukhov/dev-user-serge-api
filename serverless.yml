@@ -1,0 +1,20 @@
+service:
+  name: dev-user-serge-api
+
+plugins:
+  - serverless-webpack
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  handleRequest:
+    handler: handler.handleRequest
+    events:
+      - http:
+          method: get
+          path: graphql
+      - http:
+          method: post
+          path: graphql
